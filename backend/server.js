@@ -22,6 +22,9 @@ app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
+app.get('/api/config/google', (req, res) => {
+  res.send(process.env.GOOGLE_API_KEY || '');
+});
 //app.get('/', (req, res) => {
   //res.send('Server is ready');
 //});

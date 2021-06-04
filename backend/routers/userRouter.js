@@ -4,10 +4,19 @@ import bcrypt from 'bcryptjs';
 import data from '../data.js';
 import User from '../models/userModel.js';
 import { generateToken, isAdmin, isAuth  } from '../utils.js';
-import orderRouter from './orderRouter.js';
-import Order from '../models/orderModel.js';
+
 
 const userRouter = express.Router();
+
+userRouter.get(
+  '/top-sellers',
+  expressAsyncHandler(async (req, res) => {
+    const topSellers = await User.find({ isSeller: true })
+      .sort({ 'seller.rating': -1 })
+      .limit(3);
+    res.send(topSellers);
+  })
+);
 
 userRouter.get(
   '/seed',
@@ -139,7 +148,8 @@ userRouter.put(
     if (user) {
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
-      user.isAdmin = req.body.isAdmin || user.isAdmin;
+      user.isSeller = req.body.isSeller === user.isSeller ? user.isSeller : req.body.isSeller;
+      user.isAdmin = req.body.isAdmin === user.isAdmin ? user.isAdmin : req.body.isAdmin;
       const updatedUser = await user.save();
       res.send({ message: 'User Updated', user: updatedUser });
     } else {
