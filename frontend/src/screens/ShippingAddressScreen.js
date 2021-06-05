@@ -71,73 +71,73 @@ export default function ShippingAddressScreen(props) {
       <CheckoutSteps step1 step2></CheckoutSteps>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Shipping Address</h1>
+          <h1>ສະຖານທີ່ສົ່ງສິນຄ້າ</h1>
         </div>
         <div>
-          <label htmlFor="fullName">Full Name</label>
+          <label htmlFor="fullName">ຊື່ ແລະ ນາມສະກຸນ</label>
           <input
             type="text"
             id="fullName"
-            placeholder="Enter full name"
+            placeholder="ຊື່ ແລະ ນາມສະກຸນ"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             required
           ></input>
         </div>
         <div>
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address">ທີ່ຢູ່ປັດຈຸບັນ</label>
           <input
             type="text"
             id="address"
-            placeholder="Enter address"
+            placeholder="ໃສ່ທີ່ຢູ່ປັດຈຸບັນ"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             required
           ></input>
         </div>
         <div>
-          <label htmlFor="city">City</label>
+          <label htmlFor="city">ເມືອງ</label>
           <input
             type="text"
             id="city"
-            placeholder="Enter city"
+            placeholder="ໃສ່ເມືອງ"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             required
           ></input>
         </div>
         <div>
-          <label htmlFor="postalCode">Postal Code</label>
+          <label htmlFor="postalCode">ລະຫັດໄປສະນີ</label>
           <input
             type="text"
             id="postalCode"
-            placeholder="Enter postal code"
+            placeholder="ລະຫັດໄປສະນີ"
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
             required
           ></input>
         </div>
         <div>
-          <label htmlFor="country">Country</label>
+          <label htmlFor="country">ແຂວງ</label>
           <input
             type="text"
             id="country"
-            placeholder="Enter country"
+            placeholder="ໃສ່່ແຂວງ"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
             required
           ></input>
         </div>
         <div>
-          <label htmlFor="chooseOnMap">Location</label>
+          <label htmlFor="chooseOnMap">ສະຖານທີ່</label>
           <button type="button" onClick={chooseOnMap}>
-            Choose On Map
+            ເລືອກສະຖານທີ່ສົ່ງສິນຄ້າ
           </button>
         </div>
         <div>
           <label />
           <button className="primary" type="submit">
-            Continue
+            ດຳເນີນງານຕໍ່
           </button>
         </div>
       </form>

@@ -29,7 +29,7 @@ export default function ProductScreen(props) {
 
   useEffect(() => {
     if (successReviewCreate) {
-      window.alert('Review Submitted Successfully');
+      window.alert('ສົ່ງການລີວິວສຳເລັດແລ້ວ');
       setRating('');
       setComment('');
       dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
@@ -47,7 +47,7 @@ export default function ProductScreen(props) {
         createReview(productId, { rating, comment, name: userInfo.name })
       );
     } else {
-      alert('Please enter comment and rating');
+      alert('ກະລຸນາໃສ່ຄຳຄິດເຫັນ ແລະ ລີວິວ');
     }
   };
   return (
@@ -58,7 +58,7 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to="/">Back to result</Link>
+          <Link to="/">ກັບຄືນສູ່ໜ້າຫຼັກ</Link>
           <div className="row top">
             <div className="col-2">
               <img
@@ -78,9 +78,9 @@ export default function ProductScreen(props) {
                     numReviews={product.numReviews}
                   ></Rating>
                 </li>
-                <li>Pirce : ${product.price}</li>
+                <li>ລາຄາ : ${product.price}</li>
                 <li>
-                  Description:
+                  ກ່ຽວກັບສິນຄ້າ:
                   <p>{product.description}</p>
                 </li>
               </ul>
@@ -89,7 +89,7 @@ export default function ProductScreen(props) {
               <div className="card card-body">
                 <ul>
                   <li>
-                    Seller{' '}
+                    ຜູ້ຂາຍ{' '}
                     <h2>
                       <Link to={`/seller/${product.seller._id}`}>
                         {product.seller.seller.name}
@@ -102,18 +102,18 @@ export default function ProductScreen(props) {
                   </li>
                   <li>
                     <div className="row">
-                      <div>Price</div>
+                      <div>ລາຄາ</div>
                       <div className="price">${product.price}</div>
                     </div>
                   </li>
                   <li>
                     <div className="row">
-                      <div>Status</div>
+                      <div>ຈຳນວນສິນຄ້າ</div>
                       <div>
                         {product.countInStock > 0 ? (
-                          <span className="success">In Stock</span>
+                          <span className="success">ຍັງມີ</span>
                         ) : (
-                          <span className="danger">Unavailable</span>
+                          <span className="danger">ຂາດສາງ</span>
                         )}
                       </div>
                     </div>
@@ -122,7 +122,7 @@ export default function ProductScreen(props) {
                     <>
                       <li>
                         <div className="row">
-                          <div>Qty</div>
+                          <div>ຈຳນວນ</div>
                           <div>
                             <select
                               value={qty}
@@ -144,7 +144,7 @@ export default function ProductScreen(props) {
                           onClick={addToCartHandler}
                           className="primary block"
                         >
-                          Add to Cart
+                          ເພີ່ມໃສ່ກະຕ່າ
                         </button>
                       </li>
                     </>
@@ -154,9 +154,9 @@ export default function ProductScreen(props) {
             </div>
           </div>
           <div>
-            <h2 id="reviews">Reviews</h2>
+            <h2 id="reviews">ລີວິວ</h2>
             {product.reviews.length === 0 && (
-              <MessageBox>There is no review</MessageBox>
+              <MessageBox>ບໍ່ມີການລີວິວ</MessageBox>
             )}
             <ul>
               {product.reviews.map((review) => (
@@ -171,25 +171,25 @@ export default function ProductScreen(props) {
                 {userInfo ? (
                   <form className="form" onSubmit={submitHandler}>
                     <div>
-                      <h2>Write a customer review</h2>
+                      <h2>ຂຽນລີວິດສິນຄ້າ</h2>
                     </div>
                     <div>
-                      <label htmlFor="rating">Rating</label>
+                      <label htmlFor="rating">ການຈັດອັນດັບ</label>
                       <select
                         id="rating"
                         value={rating}
                         onChange={(e) => setRating(e.target.value)}
                       >
-                        <option value="">Select...</option>
-                        <option value="1">1- Poor</option>
-                        <option value="2">2- Fair</option>
-                        <option value="3">3- Good</option>
-                        <option value="4">4- Very good</option>
-                        <option value="5">5- Excelent</option>
+                        <option value="">ເລືອກ...</option>
+                        <option value="1">1- ບໍ່ດີ</option>
+                        <option value="2">2- ທຳມະດາ</option>
+                        <option value="3">3- ດີ</option>
+                        <option value="4">4- ດີຫຼາຍ</option>
+                        <option value="5">5- ດີທີ່ສຸດ</option>
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="comment">Comment</label>
+                      <label htmlFor="comment">ຄຳຄິດເຫັນ</label>
                       <textarea
                         id="comment"
                         value={comment}
@@ -199,7 +199,7 @@ export default function ProductScreen(props) {
                     <div>
                       <label />
                       <button className="primary" type="submit">
-                        Submit
+                        ສົ່ງ
                       </button>
                     </div>
                     <div>
@@ -213,7 +213,7 @@ export default function ProductScreen(props) {
                   </form>
                 ) : (
                   <MessageBox>
-                    Please <Link to="/signin">Sign In</Link> to write a review
+                    <Link to="/signin">ເຂົ້າສູ່ລະບົບ</Link> ເພື່ອຂຽນລີວິວ
                   </MessageBox>
                 )}
               </li>

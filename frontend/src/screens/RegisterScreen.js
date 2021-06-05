@@ -36,46 +36,46 @@ export default function RegisterScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Create Account</h1>
+          <h1>ສ້າງບັນຊີ</h1>
         </div>
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">ຊື່ ແລະ ນາມສະກຸນ</label>
           <input
             type="text"
             id="name"
-            placeholder="Enter name"
+            placeholder="ໃສ່ຊື່ ແລະ ນາມສະກຸນ"
             required
             onChange={(e) => setName(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">ອີເມວ</label>
           <input
             type="email"
             id="email"
-            placeholder="Enter email"
+            placeholder="ໃສ່ອີເມວ"
             required
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">ລະຫັດຜ່ານ</label>
           <input
             type="password"
             id="password"
-            placeholder="Enter password"
+            placeholder="ໃສ່ລະຫັດຜ່ານ"
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="confirmPassword">Confirm Password</label>
+          <label htmlFor="confirmPassword">ຢືນຢັນລະຫັດຜ່ານ</label>
           <input
             type="password"
             id="confirmPassword"
-            placeholder="Enter confirm password"
+            placeholder="ຢືນຢັນລະຫັດຜ່ານ"
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
@@ -83,14 +83,14 @@ export default function RegisterScreen(props) {
         <div>
           <label />
           <button className="primary" type="submit">
-            Register
+            ລົງທະບຽນ
           </button>
         </div>
         <div>
           <label />
           <div>
-            Already have an account?{' '}
-            <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+            ທ່ານມີບັນຊີແລ້ວບໍ່?{' '}
+            <Link to={`/signin?redirect=${redirect}`}>ເຂົ້າສູ່ລະບົບ</Link>
           </div>
         </div>
       </form>

@@ -70,9 +70,9 @@ export default function ProductListScreen(props) {
   return (
     <div>
       <div className="row">
-        <h1>Products</h1>
+        <h1>ສິນຄ້າ</h1>
         <button type="button" className="primary" onClick={createHandler}>
-          Create Product
+          ໂພດສິນຄ້າ
         </button>
       </div>
 
@@ -90,12 +90,12 @@ export default function ProductListScreen(props) {
           <table className="table">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
-                <th>ACTIONS</th>
+                <th>ລະຫັດ</th>
+                <th>ຊື່</th>
+                <th>ລາຄາ</th>
+                <th>ໝວດສິນຄ້າ</th>
+                <th>ຍີຫໍ້</th>
+                <th>ຄຳສັ່ງ</th>
               </tr>
             </thead>
             <tbody>
@@ -114,14 +114,14 @@ export default function ProductListScreen(props) {
                         props.history.push(`/product/${product._id}/edit`)
                       }
                     >
-                      Edit
+                      ປັບປຸງ
                     </button>
                     <button
                       type="button"
                       className="small"
                       onClick={() => deleteHandler(product)}
                     >
-                      Delete
+                      ລຶບຖິ້ມ
                     </button>
                   </td>
                 </tr>

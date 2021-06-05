@@ -30,26 +30,26 @@ export default function SigninScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Sign In</h1>
+          <h1>ເຂົ້າສູ່ລະບົບ</h1>
         </div>
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">ອີເມວ</label>
           <input
             type="email"
             id="email"
-            placeholder="Enter email"
+            placeholder="ໃສ່ອີເມວ"
             required
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">ລະຫັດຜ່ານ</label>
           <input
             type="password"
             id="password"
-            placeholder="Enter password"
+            placeholder="ໃສ່ລະຫັດຜ່ານ"
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
@@ -57,15 +57,15 @@ export default function SigninScreen(props) {
         <div>
           <label />
           <button className="primary" type="submit">
-            Sign In
+            ເຂົ້າສູ່ລະບົບ
           </button>
         </div>
         <div>
           <label />
           <div>
-            New customer?{' '}
+            ບໍ່ທັນມີບັນຊີບໍ່?{' '}
             <Link to={`/register?redirect=${redirect}`}>
-              Create your account
+              ສ້າງບັນຊີຂອງທ່ານ
             </Link>
           </div>
         </div>

@@ -59,26 +59,26 @@ export default function SearchScreen(props) {
         ) : error ? (
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
-          <div>{products.length} Results</div>
+          <div>{products.length} ຜົນການຄົ້ນຫາ</div>
         )}
         <div>
-          Sort by{' '}
+          ລຽງລຳດັບໂດຍ{' '}
           <select
             value={order}
             onChange={(e) => {
               props.history.push(getFilterUrl({ order: e.target.value }));
             }}
           >
-            <option value="newest">Newest Arrivals</option>
-            <option value="lowest">Price: Low to High</option>
-            <option value="highest">Price: High to Low</option>
-            <option value="toprated">Avg. Customer Reviews</option>
+            <option value="newest">ສິນຄ້າມາໃໝ່</option>
+            <option value="lowest">ລາຄາ ຈາກຕ່ຳຫາສູງ</option>
+            <option value="highest">ລາຄາ ຈາກສູງຫາຕ່ຳ</option>
+            <option value="toprated">ຕາມການຈັດອັນດັບ</option>
           </select>
         </div>
       </div>
       <div className="row top">
         <div className="col-1">
-          <h3>Department</h3>
+          <h3>ປະເພດ</h3>
             <div>
             {loadingCategories ? (
               <LoadingBox></LoadingBox>
@@ -91,7 +91,7 @@ export default function SearchScreen(props) {
                     className={'all' === category ? 'active' : ''}
                     to={getFilterUrl({ category: 'all' })}
                   >
-                    Any
+                    ສິນຄ້າທັງໝົດ
                   </Link>
                 </li>
                 {categories.map((c) => (
@@ -108,7 +108,7 @@ export default function SearchScreen(props) {
             )}
           </div>
           <div>
-            <h3>Price</h3>
+            <h3>ລາຄາ</h3>
             <ul>
               {prices.map((p) => (
                 <li key={p.name}>
@@ -125,7 +125,7 @@ export default function SearchScreen(props) {
             </ul>
           </div>
           <div>
-            <h3>Avg. Customer Review</h3>
+            <h3>ຕາມການຈັດອັນດັບ</h3>
             <ul>
               {ratings.map((r) => (
                 <li key={r.name}>
@@ -148,7 +148,7 @@ export default function SearchScreen(props) {
           ) : (
             <>
               {products.length === 0 && (
-                <MessageBox>No Product Found</MessageBox>
+                <MessageBox>ຄົ້ນບໍ່ພົບສິນຄ້າ</MessageBox>
               )}
               <div className="row center">
                 {products.map((product) => (

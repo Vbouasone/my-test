@@ -61,7 +61,7 @@ export default function ProfileScreen() {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>User Profile</h1>
+          <h1>ໂປຟາຍຜູ້ໃຊ້ງານ</h1>
         </div>
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -75,11 +75,11 @@ export default function ProfileScreen() {
             )}
             {successUpdate && (
               <MessageBox variant="success">
-                Profile Updated Successfully
+                ສຳເລັດການອັບເດດໂປຟາຍ
               </MessageBox>
             )}
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">ຊື່</label>
               <input
                 id="name"
                 type="text"
@@ -89,63 +89,63 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">ອີເມວ</label>
               <input
                 id="email"
                 type="email"
-                placeholder="Enter email"
+                placeholder="ໃສ່ອີເມວ"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">ລະຫັດຜ່ານ</label>
               <input
                 id="password"
                 type="password"
-                placeholder="Enter password"
+                placeholder="ໃສ່ລະຫັດຜ່ານ"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
             
             <div>
-              <label htmlFor="confirmPassword">confirm Password</label>
+              <label htmlFor="confirmPassword">ຢືນຢັນລະຫັດຜ່ານ</label>
               <input
                 id="confirmPassword"
                 type="password"
-                placeholder="Enter confirm password"
+                placeholder="ຢືນຢັນລະຫັດຜ່ານ"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></input>
             </div>
             {user.isSeller && (
               <>
-                <h2>Seller</h2>
+                <h2>ຜູ້ຂາຍ</h2>
                 <div>
-                  <label htmlFor="sellerName">Seller Name</label>
+                  <label htmlFor="sellerName">ຊື່ຜູ້ຂາຍ</label>
                   <input
                     id="sellerName"
                     type="text"
-                    placeholder="Enter Seller Name"
+                    placeholder="ໃສ່ຊື່ຜູ້ຂາຍ"
                     value={sellerName}
                     onChange={(e) => setSellerName(e.target.value)}
                   ></input>
                 </div>
                 <div>
-                  <label htmlFor="sellerLogo">Seller Logo</label>
+                  <label htmlFor="sellerLogo">ໂລໂກ</label>
                   <input
                     id="sellerLogo"
                     type="text"
-                    placeholder="Enter Seller Logo"
+                    placeholder="ໃສ່ໂລໂກ"
                     value={sellerLogo}
                     onChange={(e) => setSellerLogo(e.target.value)}
                   ></input>
                 </div>
                 <div>
-                  <label htmlFor="sellerDescription">Seller Description</label>
+                  <label htmlFor="sellerDescription">ຄຳອະທິບາຍກ່ຽວກັບຜູ້ຂາຍ</label>
                   <input
                     id="sellerDescription"
                     type="text"
-                    placeholder="Enter Seller Description"
+                    placeholder="ໃສ່່ຄຳອະທິບາຍ"
                     value={sellerDescription}
                     onChange={(e) => setSellerDescription(e.target.value)}
                   ></input>
@@ -155,7 +155,7 @@ export default function ProfileScreen() {
             <div>
               <label />
               <button className="primary" type="submit">
-                Update
+                ອັບເດດ
               </button>
             </div>
           </>

@@ -89,7 +89,7 @@ export default function ProductEditScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Edit Product {productId}</h1>
+          <h1>ປັບປຸງຂໍ້ມູນສິນຄ້າ {productId}</h1>
         </div>
         {loadingUpdate && <LoadingBox></LoadingBox>}
         {errorUpdate && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
@@ -100,41 +100,41 @@ export default function ProductEditScreen(props) {
         ) : (
           <>
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">ຊື່</label>
               <input
                 id="name"
                 type="text"
-                placeholder="Enter name"
+                placeholder="ໃສ່ຊື່"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="price">Price</label>
+              <label htmlFor="price">ລາຄາ</label>
               <input
                 id="price"
                 type="text"
-                placeholder="Enter price"
+                placeholder="ໃສ່ລາຄາ"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="image">Image</label>
+              <label htmlFor="image">ຮູບພາບ</label>
               <input
                 id="image"
                 type="text"
-                placeholder="Enter image"
+                placeholder="ໃສ່ຮູບພາບ"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></input>
               </div>
               <div>
-              <label htmlFor="imageFile">Image File</label>
+              <label htmlFor="imageFile">ຟາຍຮູບພາບ</label>
               <input
                 type="file"
                 id="imageFile"
-                label="Choose Image"
+                label="ເລືອກຟາຍຮູບພາບ"
                 onChange={uploadFileHandler}
               ></input>
               {loadingUpload && <LoadingBox></LoadingBox>}
@@ -143,42 +143,42 @@ export default function ProductEditScreen(props) {
               )}
             </div>
             <div>
-              <label htmlFor="category">Category</label>
+              <label htmlFor="category">ໝວດສິນຄ້າ</label>
               <input
                 id="category"
                 type="text"
-                placeholder="Enter category"
+                placeholder="ໃສ່ໝວດສິນຄ້າ"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="brand">Brand</label>
+              <label htmlFor="brand">ຍີຫໍ້</label>
               <input
                 id="brand"
                 type="text"
-                placeholder="Enter brand"
+                placeholder="ໃສ່ຍີຫໍ້"
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="countInStock">Count In Stock</label>
+              <label htmlFor="countInStock">ຈຳນວນທີ່ມີໃນສາງ</label>
               <input
                 id="countInStock"
                 type="text"
-                placeholder="Enter countInStock"
+                placeholder="ໃສ່ຈຳນວນທີ່ມີໃນສາງ"
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">ກ່ຽວກັບສິນຄ້າ</label>
               <textarea
                 id="description"
                 rows="3"
                 type="text"
-                placeholder="Enter description"
+                placeholder="ໃສ່ຂໍ້ມູນກ່ຽວກັບສິນຄ້າ"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -186,7 +186,7 @@ export default function ProductEditScreen(props) {
             <div>
               <label></label>
               <button className="primary" type="submit">
-                Update
+                ອັບເດດ
               </button>
             </div>
           </>
